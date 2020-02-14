@@ -27,9 +27,15 @@
   <button onclick="makeCrazy()">
     Сделать мигающим
   </button>
-  <input type="text" placeholder="Напишите название цвета на английском или в виде HEX-кода" size="70">
+
+  <input id="labelInput" type="text" placeholder="Напишите любое слово" size="70">
   <button onclick="addText()">
     Добавить надпись
+  </button>
+
+  <input id="bgColorInput" type="text" placeholder="Напишите название цвета на английском или в виде HEX-кода" size="70">
+  <button onclick="changeBgColor()">
+    Поменять цвет
   </button>
 
   <script>
@@ -39,6 +45,21 @@
     }
     function reset() {
       window.location.reload()
+    }
+    function addText() {
+      let labelInput =
+        document.getElementById("labelInput")
+      box.innerText = labelInput.value
+      labelInput.value = ""
+    }
+    function changeBgColor() {
+      let bgColorInput =
+        document.querySelector("#bgColorInput")
+      box.style.backgroundColor = bgColorInput.value
+      bgColorInput.value = ""
+    }
+    function moveRight() {
+      box.style.transform = "translateX(50px)"
     }
   </script>
 </body>
