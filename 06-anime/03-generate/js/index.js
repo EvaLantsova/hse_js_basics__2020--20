@@ -7,10 +7,21 @@ let divsNumber = 10
 //   count += 1
 // }
 
+// function functionName() {
+//   return 123
+// }
+//
+// () => {
+//   return 123
+// }
+//
+// () => 123
+
 for (let i = 0; i < divsNumber; i+=1) {
   let div = document.createElement('div')
 
-  div = makeRect(div)
+  div = [() => makeRect(div), () => makeCircle(div)][anime.random(0,1)]()
+
   div.style.background = `rgb(${anime.random(0,255)},${anime.random(0,255)},${anime.random(0,255)})`
   div.style.transform = `translate(${anime.random(0,100)}vw,${anime.random(0,100)}vh) rotate(${anime.random(0,360)}deg)`
 
